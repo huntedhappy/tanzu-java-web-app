@@ -1,10 +1,10 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor-infra.tkg.io/tap/tanzu-java-web-app')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor-infra.tkg.io/tap/supply_chain/tanzu-java-web-app-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='tap-install')
+NAMESPACE = os.getenv("NAMESPACE", default='default')
 
 k8s_custom_deploy(
     'tanzu-java-web-app',
-    apply_cmd="tanzu apps workload apply -f config/workload.yaml --debug --live-update" +
+    apply_cmd="tanzu apps workload apply -f config/workload.yaml --live-update" +
                " --local-path " + LOCAL_PATH +
                " --source-image " + SOURCE_IMAGE +
                " --namespace " + NAMESPACE +
