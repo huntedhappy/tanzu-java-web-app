@@ -31,7 +31,7 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: main/459c916cec3219e69885cfa25d2b7365383de22a
+        developer.apps.tanzu.vmware.com/image-source-digest: main/d46f2c88a1f405ec881361b66574a86bfb4e36c6
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -49,7 +49,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor-infra.tkg.io/tap/supply_chain/tanzu-java-web-app-tap-install@sha256:096a830c51ee0b6c0614e9c0b3380657eb37cf77e6f7631d4bf15dd6da81809c
+        image: harbor-infra.tkg.io/tap/supply_chain/tanzu-java-web-app-tap-install@sha256:5631f38d365a776a00ceec3c87aaed0d37b9c605f4307fee4d32317b5c2af02c
         livenessProbe:
           httpGet:
             path: /livez
